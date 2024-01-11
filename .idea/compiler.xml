@@ -9,8 +9,5 @@
         <module name="MavenDemo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MavenDemo" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
