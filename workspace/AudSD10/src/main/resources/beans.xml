@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="studentbean" class="org.example.Student">
+    <bean id="studentbean" class="org.example.Student" scope="prototype">
         <property name="name" value="Vimal Jaiswal"></property>
     </bean>
 
@@ -14,5 +14,40 @@
 
     <bean id="dept1" class="org.example.Dept">
 
+    </bean>
+
+    <bean id="obj" class="org.example.Account"></bean>
+
+    <bean id="ba" class="org.example.BeforeAdvisor"></bean>
+
+
+    <bean id="aa" class="org.example.AfterAdvisor"></bean>
+    <bean id="ara" class="org.example.AroundAdvisor"></bean>
+    <bean id="ta" class="org.example.ThrowsAdvisor"></bean>
+
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="obj"></property>
+        <property name="interceptorNames">
+            <list>
+                <value>ba</value>
+                <value>aa</value>
+                <value>ara</value>
+                <value>ta</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="validate" class="org.example.Validator"></bean>
+    <bean id="proxy1" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="validate"></property>
+        <property name="interceptorNames">
+            <list>
+                <value>ba</value>
+                <value>aa</value>
+                <value>ara</value>
+                <value>ta</value>
+            </list>
+        </property>
     </bean>
 </beans>

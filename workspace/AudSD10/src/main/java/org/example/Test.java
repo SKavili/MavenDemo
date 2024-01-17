@@ -1,6 +1,5 @@
 package org.example;
 
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,6 +24,16 @@ public class Test {
             e.setName("Ram");
             e.dept.setName("IT");
             e.displayInfo();
+
+
+            Account a=context.getBean("proxy", Account.class);
+            a.displayBalane();
+           // a.printStmt();
+
+//            Validator v=context.getBean("proxy1", Validator.class);
+//          v.validate(10);
+
+
         }catch (Exception e){
              e.printStackTrace();
         }
